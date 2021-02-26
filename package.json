@@ -1,0 +1,36 @@
+{
+  "name": "weatherApp",
+  "version": "1.0.0",
+  "description": "The Odin Project Weather App - Getting familiar with APIs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack serve",
+    "build": "webpack",
+    "watch": "webpack --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Thoosk/weatherApp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Thoosk/weatherApp/issues"
+  },
+  "homepage": "https://github.com/Thoosk/weatherApp#readme",
+  "devDependencies": {
+    "css-loader": "^5.1.0",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.24.2",
+    "webpack-cli": "^4.5.0",
+    "webpack-dev-server": "^3.11.2",
+    "wepack-cli": "^0.0.1-security"
+  },
+  "dependencies": {
+    "@babel/core": "^7.13.1",
+    "@babel/preset-env": "^7.13.5",
+    "babel-loader": "^8.2.2"
+  }
+}
