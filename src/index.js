@@ -3,6 +3,7 @@ import "./style.css";
 import weatherImgSrc from "./images/iconmonstr-weather-2.svg";
 import "core-js/stable";
 import "regenerator-runtime/runtime";
+import { weatherAPI } from "../apiKeys";
 
 /// DOM
 const headerEl = document.querySelector("header");
@@ -89,10 +90,7 @@ async function getWeatherData(city) {
     alert("City field is empty");
   }
 
-  let url =
-    "https://api.openweathermap.org/data/2.5/weather?q=" +
-    city.toLowerCase() +
-    "&units=metric&appid=d2d22899da9c0e25e8e1d9436fecd822";
+  let url = `https://api.openweathermap.org/data/2.5/weather?q=${city.toLowerCase()}&units=metric&appid=${weatherAPI}`;
 
   let weatherInfo;
 
