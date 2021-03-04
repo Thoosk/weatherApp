@@ -30,6 +30,13 @@ module.exports = {
         test: /\.css$/i,
         use: ["style-loader", "css-loader"],
       },
+
+      {
+        // adding a processor for your images
+        // will run through all the below mentioned files and process them through the asset manager
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: "asset/resource",
+      },
     ],
   },
 

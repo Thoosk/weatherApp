@@ -1,0 +1,51 @@
+body {
+  background-image: url(./images/mountains_foggy.jpeg);
+  background-repeat: no-repeat;
+  background-size: 100vw 100vh;
+}
+
+header {
+  width: 100%;
+  min-height: 12vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  color: #ffff;
+}
+
+#weather-card {
+  display: flex;
+  height: 30vh;
+  width: 100vw;
+  background-color: whitesmoke;
+  justify-items: flex-start;
+  align-items: center;
+}
+
+.current-weather-img {
+  min-width: 3rem;
+  min-height: 3rem;
+  width: 8rem;
+  width: 8rem;
+  margin-left: 1rem;
+}
+
+#weather-stats {
+  margin-left: 2rem;
+  width: 90vw;
+  height: 20vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  row-gap: 4rem;
+  justify-items: baseline;
+}
+
+footer {
+  color: antiquewhite;
+  position: absolute;
+  width: 100vw;
+  min-height: 5vh;
+  bottom: 0;
+}
