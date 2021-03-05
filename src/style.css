@@ -6,7 +6,7 @@ body {
 
 header {
   width: 100%;
-  min-height: 12vh;
+  min-height: 15vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,13 +14,19 @@ header {
   color: #ffff;
 }
 
+h2 {
+  margin-left: 1rem;
+  font-size: 3rem;
+}
+
 #weather-card {
   display: flex;
   height: 30vh;
   width: 100vw;
-  background-color: whitesmoke;
+
   justify-items: flex-start;
   align-items: center;
+  align-content: center;
 }
 
 .current-weather-img {
@@ -32,14 +38,52 @@ header {
 }
 
 #weather-stats {
+  font-size: 1.5rem;
+  color: black;
   margin-left: 2rem;
   width: 90vw;
   height: 20vh;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
-  row-gap: 4rem;
-  justify-items: baseline;
+  row-gap: 3rem;
+  justify-items: center;
+  align-items: start;
+}
+
+#weather-stats p {
+  height: 5rem;
+}
+
+#city-form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+input {
+  margin-right: 1rem;
+}
+
+#gif-div {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: fit-content;
+  height: fit-content;
+  margin: 0 1rem 1rem 0;
+}
+
+#gif-div img {
+  max-width: 20vw;
+  max-height: 30vh;
+  border-radius: 10%;
+}
+
+#gif-div p {
+  font-size: 0.7rem;
+  color: white;
 }
 
 footer {
@@ -48,4 +92,10 @@ footer {
   width: 100vw;
   min-height: 5vh;
   bottom: 0;
+}
+
+@media screen and (max-height: 700px) {
+  #weather-stats {
+    row-gap: 0;
+  }
 }

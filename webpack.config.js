@@ -1,7 +1,7 @@
 const path = require("path");
 
 module.exports = {
-  mode: "development",
+  mode: "production",
 
   entry: "./src/index.js",
   output: {
@@ -34,13 +34,21 @@ module.exports = {
       {
         // adding a processor for your images
         // will run through all the below mentioned files and process them through the asset manager
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        test: /\.(png|jpg|jpeg)$/i,
         type: "asset/resource",
+      },
+
+      {
+        test: /\.(svg|gif)$/i,
+        loader: "file-loader",
+        options: {
+          name: "[name].[ext]",
+        },
       },
     ],
   },
 
-  devtool: "source-map",
+  // devtool: "source-map",
 
   devServer: {
     contentBase: "./dist",
