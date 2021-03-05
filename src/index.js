@@ -27,9 +27,17 @@ function init() {
   weatherImg.classList.add("current-weather-img");
   weatherCard.appendChild(weatherImg);
 
+  let cityStats = document.createElement("div");
+  cityStats.setAttribute("id", "cityStats");
+
   let currCity = document.createElement("h2");
   currCity.innerHTML = "Graz";
-  weatherCard.appendChild(currCity);
+  let currTime = document.createElement("h3");
+  currTime.innerHTML = `${getTime().date} <br> ${getTime().time}`;
+
+  cityStats.appendChild(currCity);
+  cityStats.appendChild(currTime);
+  weatherCard.appendChild(cityStats);
 
   const weatherInfoSec = document.createElement("section");
   weatherInfoSec.setAttribute("id", "weather-stats");
@@ -64,6 +72,32 @@ function init() {
   });
 }
 
+function getTime() {
+  const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
+  let options = {
+      timeZone: `${timeZone}`,
+      year: "numeric",
+      month: "numeric",
+      day: "numeric",
+    },
+    formatterDate = new Intl.DateTimeFormat([], options);
+
+  let options2 = {
+      timeZone: `${timeZone}`,
+      hour: "numeric",
+      minute: "numeric",
+      second: "numeric",
+    },
+    formatterTime = new Intl.DateTimeFormat([], options2);
+
+  let timeObj = {
+    date: formatterDate.format(new Date()),
+    time: formatterTime.format(new Date()),
+  };
+  return timeObj;
+}
+
 //get userInput with the given city and set the new weather on the weatherCard
 const submitBtn = document.querySelector("#submit-task");
 submitBtn.addEventListener("click", async () => {
@@ -88,7 +122,7 @@ function setCurrentWeather(city, currentWeatherData) {
   setWeatherIcon(currentWeatherData[7]);
 
   // set the name of the current city
-  let cityName = weatherCard.firstElementChild.nextSibling;
+  let cityName = weatherCard.firstElementChild.nextSibling.firstElementChild;
   cityName.textContent = city;
 
   // set the gif for the current weather
